@@ -15,27 +15,24 @@ public class MonsterData : ScriptableObject
 
     public enum Species
     {
-        VOID, 
         DARK, 
         LIGHT,
-        ENERGY, // SP VOID+EVIL+LIGHT
-        FIRE, 
-        TESTING__NAME, // SP FIRE+
-        AIR,
+        ENERGY, // SP EVIL+LIGHT
+        VOID,
+        COSMIC, // SP VOID+ENERGY
+        FIRE,
+        ROCK,
+        LAVA, // SP FIRE+ROCK
         ICE,
+        WIND,
         CRYSTAL, // SP ICE+WIND
         WATER,
-        EARTH,
+        TOXIC,
+        GRASS,
         ELETRIC,
         METAL,
-        VENOM,
-        ROCK,
-        LAVA, // SP
-        GRASS,
-        NATURE, // SP GRASS+EARTH
-        MENTAL,
-        FIGHTER, 
-
+        ARCANE,
+        BRAWLER,
     }
 
     protected Type type;
@@ -54,9 +51,7 @@ public class MonsterData : ScriptableObject
     protected int wisdom; // special attack
     protected int spirit; // special defense
     protected int speed; // quem da hit primeiro / dodge
+    // 
     protected int luck; // crit chance / dodge
-    
-    
-
        
 }
