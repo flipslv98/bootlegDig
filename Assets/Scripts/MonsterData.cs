@@ -27,15 +27,15 @@ public class MonsterData : ScriptableObject
         BRAWLER,
     }
 
-    protected Type type;
-    protected string name;
-    protected int level;
-    protected int exp;
+    public Type type;
+    public string name;
+    public int level;
+    public int exp;
 
-    protected int hpMax;
-    protected int mpMax;
+    public int hpMax;
+    public int mpMax;
 
-    protected Attributes attributes;
+    public Attributes attributes;
     
 
        

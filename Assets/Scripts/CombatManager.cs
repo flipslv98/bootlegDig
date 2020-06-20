@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using UnityEngine;
 
-public static class CombatManager : MonoBehaviour
+public class CombatManager : MonoBehaviour
 {
     private static CombatManager single_instance = null;
 
@@ -16,7 +16,7 @@ public static class CombatManager : MonoBehaviour
         return single_instance;
     }
 
-    public static combatPvE (Monster player, Monster enemy)
+    public static void combatPvE (Monster player, Monster enemy)
     {
         float speedRatio = 0;
         bool playerDead = false;
@@ -40,11 +40,11 @@ public static class CombatManager : MonoBehaviour
             }
             else if (player.getSpeed() > enemy.getSpeed())
             {
-                speedRatio = getSpeedRatio(player.getSpeed(), enemy.getSpeed());            
+                speedRatio = getSpeedRatio(player, enemy);            
             }
             else if (enemy.getSpeed() > player.getSpeed())
             {
-                speedRatio = getSpeedRatio(enemy.getSpeed(), player.getSpeed());
+                speedRatio = getSpeedRatio(enemy, player);
             }
 
 
@@ -52,20 +52,21 @@ public static class CombatManager : MonoBehaviour
 
     }
 
-    private float getSpeedRatio(int faster, int slower)
+    private static float getSpeedRatio(Monster faster, Monster slower)
     {
-        speedRatio = enemy.getSpeed() * player.getLevel() / player.getSpeed() * enemy.getLevel();
+        float speedRatio = slower.getSpeed() * faster.getLevel() / faster.getSpeed() * slower.getLevel();
         speedRatio = 100 - speedRatio * 100;
-        speedRatio = Math.Round(speedRatio);
-        Random r = new Random();
-        int prob = r.next(0, 100);
+        speedRatio = (float)Math.Round(speedRatio);
+        System.Random r = new System.Random();
+        int prob = r.Next(0, 100);
         if (prob < speedRatio)
         {
             // player.doubleattack
         }
+        return speedRatio;
     }
 
-    public static combatPvP ()
+    public static void combatPvP ()
     {
 
     }

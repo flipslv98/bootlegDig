@@ -4,19 +4,19 @@ public class SpecificData : ScriptableObject
 {
     public enum Size { PIGMY,TINY,SMALL,NORMAL,BIG,HUGE,COLOSSAL}
 
-    protected Attributes specific;
+    public Attributes own;
 
-    protected int luck;
-    protected Size size;
+    public int luck;
+    public Size size;
 
-    protected Attributes trained;
+    public Attributes trained;
 
     public SpecificData(System.Random r)
     {
         luck = r.Next(1, 51);
 
-        specific = new Attributes();
-        specific.specificStart(r);
+        own = new Attributes();
+        own.specificStart(r);
 
         trained = new Attributes();
         trained.trainedStart();

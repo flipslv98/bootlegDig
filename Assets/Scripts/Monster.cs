@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected MonsterData monsterData;
+    protected SpeciesData speciesData;
+    protected SpecificData specificData;
 
-    // Update is called once per frame
-    void Update()
+    public Monster()
     {
-        
+        specificData = new SpecificData(new System.Random());
+    }
+   public int getSpeed()
+   {
+        return monsterData.attributes.SPD;
+   }
+
+    public int getLevel()
+    {
+        return monsterData.level;
     }
 }

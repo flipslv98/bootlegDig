@@ -7,15 +7,15 @@ using UnityEngine;
 public class SpeciesData : ScriptableObject
 {
 
-    [SerializeField] protected int baseHP;
-    [SerializeField] protected int baseMP;
-    [SerializeField] protected int baseATK;
-    [SerializeField] protected int baseDEF;
-    [SerializeField] protected int baseWIS;
-    [SerializeField] protected int baseSPT;
-    [SerializeField] protected int baseSPD;
+    [SerializeField] public int baseHP;
+    [SerializeField] public int baseMP;
+    [SerializeField] public int baseATK;
+    [SerializeField] public int baseDEF;
+    [SerializeField] public int baseWIS;
+    [SerializeField] public int baseSPT;
+    [SerializeField] public int baseSPD;
 
-    [SerializeField] protected int size;
+    [SerializeField] public int size;
 
 
 }
