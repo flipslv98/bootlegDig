@@ -7,13 +7,16 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxSpeed = 5;
     [SerializeField] private float acceleration = 5;
 
+    [SerializeField] private BoxCollider2D frontCollider;
+
     private float currentSpeed = 0;
+    
 
     void Update()
     {
         Vector3 direction = directionalInput();
 
-
+        currentSpeed += acceleration * Time.deltaTime;
 
         Mathf.Clamp(currentSpeed, 0, maxSpeed);
         transform.position += direction * currentSpeed;

@@ -4,20 +4,18 @@ using System.Collections.Generic;
 using System.Dynamic;
 using UnityEngine;
 
-public class CombatManager : MonoBehaviour
+public class Combat : MonoBehaviour
 {
-    private static CombatManager single_instance = null;
+    private static Terrain terrain;
+    private static List<Combatant> side1;
+    private static List<Combatant> side2;
 
-    public static CombatManager getInstance()
+    public static void combatPvE (Terrain t, Monster player, Monster enemy)
     {
-        if (single_instance == null)
-            single_instance = new CombatManager();
+        terrain = t;
+        side1.Add(new Combatant(player));
+        side2.Add(new Combatant(enemy));
 
-        return single_instance;
-    }
-
-    public static void combatPvE (Monster player, Monster enemy)
-    {
         float speedRatio = 0;
         bool playerDead = false;
         bool enemyDead = false;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 public class SpecificData : ScriptableObject
 {
@@ -8,6 +9,7 @@ public class SpecificData : ScriptableObject
 
     public int luck;
     public Size size;
+    public List<Terrain.Type> standOn;
 
     public Attributes trained;
 
