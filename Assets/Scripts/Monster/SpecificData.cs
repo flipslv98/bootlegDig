@@ -17,10 +17,10 @@ public class SpecificData : ScriptableObject
     {
         luck = r.Next(1, 51);
 
-        own = new Attributes();
+        own = new Attributes(200,1400);
         own.specificStart(r);
 
-        trained = new Attributes();
+        trained = new Attributes(200,700);
         trained.trainedStart();
 
         Array v = Enum.GetValues(typeof(Size));
